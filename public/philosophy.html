@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Philosophy — Mannheim Capital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2e;
+      --gold: #b8955a;
+      --ivory: #f0ece4;
+      --muted: #7a8a9a;
+      --card-bg: #0a0a0a;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--ivory);
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeIn 1.4s ease forwards;
+    }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Nav bar ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav-logo-mannheim {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.28em;
+      color: #ffffff;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .nav-logo-capital {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.52rem;
+      letter-spacing: 0.45em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    .nav-back {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-back:hover { color: var(--gold); }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 4rem 2rem 5rem;
+    }
+
+    /* ── Letter card ── */
+    .letter {
+      background: var(--card-bg);
+      border: 1px solid var(--gold);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.7),
+        0 2px 8px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(184, 149, 90, 0.08);
+      max-width: 680px;
+      width: 100%;
+      padding: 4rem 4.5rem;
+      opacity: 0;
+      animation: riseIn 1.2s ease 0.4s forwards;
+    }
+
+    .letter-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 2.4rem;
+    }
+
+    .letter-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .letter-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 300;
+      color: var(--ivory);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    .letter-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .letter-rule {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      margin-top: 1.8rem;
+      opacity: 0.7;
+    }
+
+    /* ── Body copy ── */
+    .letter-body {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.95;
+      color: rgba(240, 236, 228, 0.75);
+    }
+
+    .letter-body p + p {
+      margin-top: 1.4rem;
+    }
+
+    .letter-body strong {
+      font-weight: 400;
+      color: var(--ivory);
+    }
+
+    .letter-body em {
+      font-style: italic;
+      color: rgba(184, 149, 90, 0.9);
+    }
+
+    /* ── Closing ── */
+    .letter-closing {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .letter-closing-salutation {
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(240, 236, 228, 0.55);
+    }
+
+    .letter-closing-name {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ivory);
+      margin-top: 0.6rem;
+    }
+
+    .letter-closing-title {
+      font-size: 0.82rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 1.8rem 2rem 2.2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+
+    .footer-reg {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      color: rgba(240, 236, 228, 0.5);
+      letter-spacing: 0.08em;
+      line-height: 1.9;
+    }
+
+    .footer-disclaimer {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      color: rgba(240, 236, 228, 0.25);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .letter { padding: 2.5rem 2rem; }
+      nav { padding: 1.2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">
+      <span class="nav-logo-mannheim">Mannheim</span>
+      <span class="nav-logo-capital">Capital</span>
+    </a>
+    <a class="nav-back" href="/">&#8592; Home</a>
+  </nav>
+
+  <main>
+    <article class="letter">
+
+      <header class="letter-header">
+        <span class="letter-label">Our Philosophy</span>
+        <h1 class="letter-title">On the nature of<br><em>enduring wealth.</em></h1>
+        <div class="letter-rule"></div>
+      </header>
+
+      <div class="letter-body">
+        <p>
+          Most conversations about investing begin with returns. Ours begins with
+          <strong>purpose</strong>. A portfolio that outperforms for three years but
+          unravels at the moment it is most needed has failed the only test that matters.
+        </p>
+        <p>
+          We believe wealth is not an end in itself but a <em>form of prepared patience</em> —
+          the quiet ability to act well when others cannot. That belief shapes every
+          recommendation we make.
+        </p>
+        <p>
+          Our process is grounded in three disciplines. <strong>Structure</strong>: each
+          allocation has an explicit reason and a defined role. <strong>Endurance</strong>:
+          we design for decades, not quarters, and resist the seductive noise of the short
+          term. <strong>Measure</strong>: we track what matters — real purchasing power,
+          downside resilience, alignment with your life — not league-table rankings.
+        </p>
+        <p>
+          We work with very few families by design. Genuine counsel requires time,
+          context, and the courage to say the unfashionable thing. None of that scales
+          without compromise, and we choose not to compromise.
+        </p>
+        <p>
+          If you share this disposition — if you value clarity over cleverness, and
+          durability over excitement — we would be glad to talk.
+        </p>
+      </div>
+
+      <footer class="letter-closing">
+        <span class="letter-closing-salutation">With discipline and care,</span>
+        <span class="letter-closing-name">Ashok M</span>
+        <span class="letter-closing-title">Founder, Mannheim Capital &nbsp;·&nbsp; CA &middot; CFA</span>
+      </footer>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-reg">
+      Ashok M &nbsp;|&nbsp; ARN: 267503 &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor
+    </div>
+    <p class="footer-disclaimer">
+      Mutual Fund investments are subject to market risks, read all scheme related documents carefully.
+    </p>
+  </footer>
+
+</body>
+</html>
